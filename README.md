@@ -4,7 +4,7 @@ Dotfiles
 ## TODO
 
  * Firacode Fonts
- * Remove MAC and Windows soykaf
+ * Remove non-unix soykaf
 
 ## Source of inspiration
 
