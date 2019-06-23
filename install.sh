@@ -1,16 +1,13 @@
 #!/bin/sh
 
-if [ ! -d "$HOME/.cc_dotfiles" ]
+if [ ! -d "$HOME/.dotfiles" ]
 then
-  echo "Installing Campus Code Dotfiles"
+  echo "Installing Dotfiles"
   echo "We'll install:"
   echo "  - tmux"
   echo "  - silver searcher"
   echo "  - zsh"
-  echo "  - vim (vim-gnome | macvim)"
-  echo "  - google-chrome (mac)"
-  echo "  - iterm2 (mac)"
-  echo "  - atom (mac)"
+  echo "  - vim (vim-gnome)"
 
   case "$(uname -s)" in
     Linux)
@@ -36,9 +33,9 @@ then
       return
       ;;
   esac
-  git clone --depth=10 https://github.com/campuscode/cc_dotfiles.git "$HOME/.cc_dotfiles"
-  cd "$HOME/.cc_dotfiles"
+  git clone --depth=10 https://github.com/matheusam/dotfiles.git "$HOME/.dotfiles"
+  cd "$HOME/.dotfiles"
   rake install
 else
-  echo "You already have Campus Code Dotfiles installed."
+  echo "Fo shizzle my nizzle... You already have Dotfiles installed."
 fi

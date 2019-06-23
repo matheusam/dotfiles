@@ -1,8 +1,8 @@
 require 'rake'
 
-desc 'Install Campus Code Dotfile in your machine'
+desc 'Installing Dotfiles'
 task :install do
-  puts "Thank you for choose Campus Code Dotfiles (cc_dotfiles)"
+  puts "Forked from Campus Code Dotfiles (dotfiles)"
 
   install_files(Dir.glob([
     "aliases",
@@ -64,8 +64,8 @@ def install_fonts
   puts "======================================================"
   puts "Installing patched fonts for Powerline/Lightline."
   puts "======================================================"
-  run_command %{ cp -f $HOME/.cc_dotfiles/fonts/* $HOME/Library/Fonts } if macos?
-  run_command %{ mkdir -p ~/.fonts && cp ~/.cc_dotfiles/fonts/* ~/.fonts && fc-cache -vf ~/.fonts } if linux?
+  run_command %{ cp -f $HOME/.dotfiles/fonts/* $HOME/Library/Fonts } if macos?
+  run_command %{ mkdir -p ~/.fonts && cp ~/.dotfiles/fonts/* ~/.fonts && fc-cache -vf ~/.fonts } if linux?
   puts
 end
 
@@ -83,8 +83,8 @@ def linux?
 end
 
 def install_prereqs
-  run_command %{ $HOME/.cc_dotfiles/mac.sh } if macos?
-  run_command %{ $HOME/.cc_dotfiles/ubuntu.sh } if linux?
+  run_command %{ $HOME/.dotfiles/mac.sh } if macos?
+  run_command %{ $HOME/.dotfiles/ubuntu.sh } if linux?
 end
 
 def verify_pre_reqs

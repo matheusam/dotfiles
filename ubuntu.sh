@@ -9,7 +9,7 @@ sudo apt-get install -y silversearcher-ag \
  dconf-cli \
  vim-gnome
 git clone https://github.com/Anthony25/gnome-terminal-colors-solarized.git
-~/.cc_dotfiles/gnome-terminal-colors-solarized/install.sh
+~/.dotfiles/gnome-terminal-colors-solarized/install.sh
 sudo apt-get purge ruby
 echo 'Change your terminal window to Run command as login shell and restart'
 echo 'You can find more information about this on' \

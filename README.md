@@ -1,29 +1,23 @@
-CAMPUS CODE Dotfiles
+Dotfiles
 ====================
+
+## TODO
+
+ * Firacode Fonts
+ * Remove MAC and Windows soykaf
 
 ## Source of inspiration
 
-Our dotfiles are based on following amazing dotfiles:
+This project is a fork from
 
-[Skwp Dotfiles](http://github.com/skwp/dotfiles)
-
-[ThoughtBot Dotfiles](http://github.com/thoughtbot/dotfiles)
-
-## Requirements
-
-* Zsh
-* [Ag](https://github.com/ggreer/the_silver_searcher)
-* [ITerm 2 (Mac)](https://www.iterm2.com/index.html)
-* MVim (Mac) or GVim (Linux)
-* [Solarized](http://ethanschoonover.com/solarized)
-* Tmux
+[CC Dotfiles](https://github.com/campuscode/cc_dotfiles)
 
 ## Install
 
 Run follow command:
 
 ```
-sh -c "`curl -fSs https://raw.githubusercontent.com/campuscode/cc_dotfiles/master/install.sh`"
+sh -c "`curl -fSs https://raw.githubusercontent.com/matheusam/dotfiles/master/install.sh`"
 ```
 
 Type your password to change your default shell to `zsh`

@@ -1,6 +1,6 @@
 # Based on Skwp's aliases
 # https://raw.githubusercontent.com/skwp/dotfiles/997d36bef991652dd436c076e57d8f00c49f4994/zsh/aliases.zsh
-ccdf=$HOME/.cc_dotfiles
+ccdf=$HOME/.dotfiles
 
 # global
 alias -g ...='../..'
