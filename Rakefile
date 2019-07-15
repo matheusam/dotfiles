@@ -17,7 +17,7 @@ task :install do
     "irb/*"
   ]))
 
-  install_prereqs
+#  install_prereqs
 
   install_fonts
 
