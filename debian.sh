@@ -31,7 +31,6 @@ sudo usermod -aG docker $USER
 source /home/$USER/.rvm/scripts/rvm
 
 ## CC_DOTFILES SETUP
-sudo apt-get install -y python-software-properties software-properties-common
 sudo add-apt-repository -y ppa:pi-rho/dev
 sudo apt-get update
 sudo apt-get install -y silversearcher-ag \
