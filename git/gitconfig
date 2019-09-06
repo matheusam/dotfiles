@@ -123,3 +123,5 @@
   enabled = true
 [include]
   path = ~/.gitconfig.local
+[user]
+	email = matheus.martins@locaweb.com.br

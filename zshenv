@@ -7,3 +7,7 @@ export PATH="$HOME/.bin:/usr/local/sbin:$PATH"
 
 # Local config
 [[ -f ~/.zshenv.local ]] && source ~/.zshenv.local
+
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
