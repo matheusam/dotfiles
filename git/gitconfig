@@ -107,7 +107,7 @@
   default = upstream
 [core]
   autocrlf = false
-  editor = vim
+	editor = vim
   excludesfile = ~/.gitignore
 [advice]
   # disable “how to stage/unstage/add” hints given by git status
@@ -124,4 +124,5 @@
 [include]
   path = ~/.gitconfig.local
 [user]
-	email = matheus.martins@locaweb.com.br
+	name = Matheus A.M.
+	email = matheusthebr@gmail.com

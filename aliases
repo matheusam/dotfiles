@@ -176,3 +176,9 @@ alias gw2='ssh -i ~/.ssh/nibbler_rsa _mmartins@nibbler0002.linux.locaweb.com.br'
 # random shit
 alias mimda='sudo chown -R $USER:$USER .'
 alias mata='rm -f tmp/pids/server.pid'
+=======
+
+# Python 3.6
+alias python='/usr/local/bin/python3.6'
+
+alias con_aws='ssh connecti@connecti.dedicado.co'
