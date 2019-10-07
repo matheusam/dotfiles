@@ -52,6 +52,8 @@ bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
 
 set -o nobeep # no annoying beeps
 
+if [ "$TMUX" = "" ]; then tmux; fi
+
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
