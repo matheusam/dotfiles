@@ -7,7 +7,7 @@ sudo apt-get install \
     ca-certificates \
     curl \
     gnupg2 \
-    software-properties-common vim leafpad docker docker-compose \
+    software-properties-common vim leafpad docker \
     python3 python3-pip dirmngr git
 
 #GIT
@@ -15,20 +15,14 @@ git config --global user.name "Matheus A.M."
 git config --global user.email matheusthebr@gmail.com
 git config --global core.editor vim
 
+# RBENV
+
+
 #DOCKER
-curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
-
-sudo add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/debian \
-   $(lsb_release -cs) \
-   stable"
-
-sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io
-sudo usermod -aG docker $USER
-
-#SETUP RVM
-source /home/$USER/.rvm/scripts/rvm
+sudo apt-get remove docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 ## CC_DOTFILES SETUP
 sudo add-apt-repository -y ppa:pi-rho/dev
