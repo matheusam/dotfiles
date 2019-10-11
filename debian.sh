@@ -53,8 +53,8 @@ sudo apt-get update
 sudo apt-get install -y silversearcher-ag \
  zsh \
  tmux \
- dconf-cli \
- vim-gnome
+ dconf-cli
+
 git clone https://github.com/Anthony25/gnome-terminal-colors-solarized.git
 ~/.dotfiles/gnome-terminal-colors-solarized/install.sh
 sudo apt-get purge ruby

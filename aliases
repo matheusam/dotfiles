@@ -3,9 +3,9 @@
 ccdf=$HOME/.dotfiles
 
 # global
-alias -g ...='../..'
-alias -g ....='../../..'
-alias -g .....='../../../..'
+#alias -g ...='../..'
+#alias -g ....='../../..'
+#alias -g .....='../../../..'
 
 # PS
 alias psa="ps aux"
