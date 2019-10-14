@@ -21,6 +21,9 @@ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 source ~/.bashrc
 type rbenv
+git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+rbenv install 2.6.3
+rbenv global 2.6.3
 
 # DOCKER - DEBIAN
 sudo apt-get remove docker docker-engine docker.io containerd runc
