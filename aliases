@@ -119,6 +119,7 @@ alias gt='git t'
 alias gbg='git bisect good'
 alias gbb='git bisect bad'
 alias gsync='git fetch --prune origin '\''+refs/tags/*:refs/tags/*'\'' '
+alias rebase='git pull origin dev --rebase'
 
 # Common shell functions
 alias less='less -r'
@@ -180,4 +181,29 @@ alias mata='rm -f tmp/pids/server.pid'
 # Python 3.6
 alias python='/usr/local/bin/python3.6'
 
+# AWS
 alias con_aws='ssh connecti@connecti.dedicado.co'
+alias srs_staging='ssh -i ~/.ssh/srs_staging.pem centos@ec2-3-230-167-215.compute-1.amazonaws.com'
+alias rmtp_prod='ssh -i ~/.ssh/rmtp_prod.pem centos@34.237.77.211'
+alias srs_hls='ssh -i ~/.ssh/srs-hls.pem centos@ec2-3-92-167-157.compute-1.amazonaws.com'
+alias antmedia='ssh -i ~/.ssh/antmedia.pem centos@ec2-35-175-63-104.compute-1.amazonaws.com'
+alias ssh_m4='ssh -i ~/.ssh/M4.pem admin@15.228.43.81'
+alias ssh_m4_micro='ssh -i ~/.ssh/M4.pem admin@18.231.165.78'
+alias wordmerda='ssh -i ~/workspace/batista/wordpress_sersaudavel/wordpress.pem bitnami@34.232.14.3'
+alias boticario='ssh -i ~/workspace/batista/wordpress_sersaudavel/wordpress.pem bitnami@3.223.191.230'
+
+# HEROKU
+alias deploy_prod='git checkout master && git push prod_heroku master:master && heroku restart --app qflash-production'
+
+# docker
+alias docker-db-create='docker-compose exec web rails db:create'
+alias docker-db-migrate='docker-compose exec web rails db:migrate'
+alias docker-pg-dump='docker-compose exec postgres pg_restore --verbose --clean --no-acl --no-owner -h localhost -U postgres -d flash_development /dumps/latest.dump || true'
+alias docker-exec='docker-compose exec web bash'
+
+# Qflash
+alias flash='docker-db-create && docker-pg-dump && docker-db-migrate && docker-exec'
+
+# Simplecov
+alias simplecov='xdg-open coverage/index.html'
+
