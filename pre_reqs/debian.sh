@@ -1,29 +1,4 @@
 #!/bin/sh
-sudo apt-get update
-### PERSONAL
-#INSTALL BASE
-sudo apt-get install \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    gnupg2 \
-    software-properties-common vim leafpad docker \
-    python3 python3-pip dirmngr git
-
-#GIT
-git config --global user.name "Matheus A.M."
-git config --global user.email matheusthebr@gmail.com
-git config --global core.editor vim
-
-# RBENV
-git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
-echo 'eval "$(rbenv init -)"' >> ~/.bashrc
-source ~/.bashrc
-type rbenv
-git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
-rbenv install 2.6.3
-rbenv global 2.6.3
 
 # DOCKER - DEBIAN
 sudo apt-get remove docker docker-engine docker.io containerd runc
@@ -60,7 +35,7 @@ curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 sudo apt-get update && sudo apt-get install spotify-client
 
-## CC_DOTFILES SETUP
+## dotfiles SETUP
 sudo add-apt-repository -y ppa:pi-rho/dev
 sudo apt-get update
 sudo apt-get install -y silversearcher-ag \

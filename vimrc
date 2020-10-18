@@ -14,9 +14,14 @@ set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
 set ignorecase    " Ignore case when searching...
 set smartcase     " ...unless we type a capital
-set showmode      "Show current mode down the bottom
+set showmode      " Show current mode down the bottom
 set visualbell    " No noise
-set nowrap        "Don't wrap lines
+set noerrorbells  " No noise
+set t_vb=         " No noise
+set nowrap        " Don't wrap lines
+set modeline      " Turn modeline on (Vi magic comment)
+set modelines=5
+set nomodelineexpr
 
 syntax on
 
@@ -149,7 +154,10 @@ endif
 let g:solarized_termtrans=1
 syntax enable
 set background=dark
-colorscheme solarized
+try
+  colorscheme solarized
+catch
+endtry
 
 if filereadable(expand("./bin/rspec"))
   let g:rspec_command = "VtrSendCommandToRunner! ./bin/rspec {spec}"
