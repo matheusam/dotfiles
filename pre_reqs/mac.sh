@@ -8,3 +8,6 @@ brew cask install atom
 brew cask install firefox
 brew cask install brave-browser
 brew cask install spotify
+
+brew tap homebrew/cask-fonts
+brew cask install font-fira-code

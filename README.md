@@ -1,9 +1,5 @@
 Dotfiles
 
-## TODO
-
- * Firacode Fonts
-
 ## Source of inspiration
 
 This project is a fork from
@@ -14,11 +10,17 @@ This project is a fork from
 
 #### Ubuntu / Debian
 
-* curl: `sudo apt-get install -y curl`
+* curl:
+
+`sudo apt-get install -y curl`
 
 #### Mac
 
-* Homebrew: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
+* Homebrew:
+
+`xcode-select --install || xcode-select -r`
+
+`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
 
 ## Install
 

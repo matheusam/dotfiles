@@ -63,8 +63,19 @@ install_gnome_terminal_colors() {
   $COLORS_PATH/install.sh
 }
 
+remove_manual_ruby_install() {
+  sudo apt-get remove -y ruby
+  sudo apt-get autoremove -y
+}
+
 setup_wallpaper() {
   gsettings set org.gnome.desktop.background picture-uri file:///$HOME/.dotfiles/wallpaper.jpg
+}
+
+install_fira_code_font() {
+  sudo add-apt-repository universe
+  sudo apt-get update
+  sudo apt install fonts-firacode
 }
 
 echo 'Starting ubuntu install'
@@ -77,8 +88,9 @@ install_spotify
 install_tmux > /dev/null 2>&1
 install_gnome_terminal_colors
 
-sudo apt-get remove -y ruby
-sudo apt-get autoremove -y
+remove_manual_ruby_install
+
 setup_wallpaper
+install_fira_code_font
 
 echo 'Minimal requests installed! =]'
