@@ -123,6 +123,3 @@
   enabled = true
 [include]
   path = ~/.gitconfig.local
-[user]
-	name = Matheus A.M.
-	email = matheusthebr@gmail.com

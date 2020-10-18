@@ -1,4 +1,4 @@
-Dotfiles
+# Dotfiles
 
 ## Source of inspiration
 
