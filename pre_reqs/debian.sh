@@ -64,6 +64,10 @@ install_gnome_terminal_colors() {
   $COLORS_PATH/install.sh
 }
 
+setup_wallpaper() {
+  gsettings set org.gnome.desktop.background picture-uri file:///$HOME/.dotfiles/wallpaper.jpg
+}
+
 echo 'Starting debian install'
 
 sudo apt-get upgrade && apt-get update
@@ -76,5 +80,6 @@ install_gnome_terminal_colors
 
 sudo apt-get remove -y ruby
 sudo apt-get autoremove -y
+setup_wallpaper
 
 echo 'Minimal requests installed! =]'
