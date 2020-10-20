@@ -1,5 +1,7 @@
 setopt promptsubst
 
+if [ "$TMUX" = ""  ]; then tmux; fi
+
 # load our own completion functions
 fpath=(~/.zsh/completion /usr/local/share/zsh/site-functions $fpath)
 
@@ -51,8 +53,6 @@ bindkey "^N" insert-last-word
 bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
 
 set -o nobeep # no annoying beeps
-
-if [ "$TMUX" = "" ]; then tmux; fi
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
