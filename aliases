@@ -61,6 +61,7 @@ alias zrl='source $HOME/.zshrc.local'
 alias hfull='history 1 -1'
 
 # Git Aliases
+alias cb='git symbolic-ref --short -q HEAD'
 alias gs='git status'
 alias gst='git status'
 alias gsts='git stash'
