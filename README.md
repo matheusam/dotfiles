@@ -1,23 +1,33 @@
-Dotfiles
-====================
-
-## TODO
-
- * Firacode Fonts
- * Remove non-unix soykaf
+# Dotfiles
 
 ## Source of inspiration
 
 This project is a fork from
 
-[CC Dotfiles](https://github.com/campuscode/cc_dotfiles)
+[CC Dotfiles](https://github.com/the-harry/dotfiles)
+
+## Pre-Reqs
+
+#### Ubuntu / Debian
+
+* curl:
+
+`sudo apt-get install -y curl`
+
+#### Mac
+
+* Homebrew:
+
+`xcode-select --install || xcode-select -r`
+
+`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
 
 ## Install
 
 Run follow command:
 
 ```
-sh -c "`curl -fSs https://raw.githubusercontent.com/matheusam/dotfiles/master/install.sh`"
+sh -c "`curl -fSs https://raw.githubusercontent.com/the-harry/dotfiles/master/install.sh`"
 ```
 
 Type your password to change your default shell to `zsh`
