@@ -1,4 +1,3 @@
-# See the README for examples.
 [color]
   ui = true
 [color "branch"]
@@ -124,5 +123,8 @@
 [include]
   path = ~/.gitconfig.local
 [user]
-	name = Matheus A.M.
 	email = matheusthebr@gmail.com
+	name = Harry
+
+[github]
+	user = Harry

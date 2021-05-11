@@ -61,6 +61,7 @@ alias zrl='source ~/.zshrc.local'
 alias hfull='history 1 -1'
 
 # Git Aliases
+alias cb='git symbolic-ref --short -q HEAD'
 alias gs='git status'
 alias gst='git status'
 alias gsts='git stash'
@@ -108,7 +109,7 @@ alias gplr='git pull --rebase'
 alias gp='git push'
 alias gpX='git push --delete'
 #push current branch
-alias gpsh='git push -u origin `git rev-parse --abbrev-ref HEAD`'
+alias push='git push -u origin `git rev-parse --abbrev-ref HEAD`'
 alias gnb='git nb' # new branch aka checkout -b
 alias grs='git reset'
 alias grsh='git reset --hard'
@@ -119,6 +120,7 @@ alias gt='git t'
 alias gbg='git bisect good'
 alias gbb='git bisect bad'
 alias gsync='git fetch --prune origin '\''+refs/tags/*:refs/tags/*'\'' '
+alias rebase='git pull origin master --rebase'
 
 # Common shell functions
 alias less='less -r'
@@ -168,17 +170,9 @@ alias brewu='brew update && brew upgrade && brew cleanup && brew prune && brew d
 
 # vim: ft=zsh
 
-# nibbler
-
-alias gw1='ssh -i ~/.ssh/nibbler_rsa _mmartins@nibbler0001.linux.locaweb.com.br'
-alias gw2='ssh -i ~/.ssh/nibbler_rsa _mmartins@nibbler0002.linux.locaweb.com.br'
-
 # random shit
 alias mimda='sudo chown -R $USER:$USER .'
 alias mata='rm -f tmp/pids/server.pid'
-=======
 
 # Python 3.6
 alias python='/usr/local/bin/python3.6'
-
-alias con_aws='ssh connecti@connecti.dedicado.co'
