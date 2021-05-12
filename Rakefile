@@ -105,7 +105,7 @@ def installation_message
   puts '======================================================================='
 end
 
-def linux
+def linux?
   RUBY_PLATFORM.downcase.include?("linux")
 end
 
