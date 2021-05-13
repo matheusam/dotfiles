@@ -50,3 +50,11 @@ Place your customizations in the following files:
 * .plugin.vim.local
 * .tmux.conf.local
 * .gitconfig.local
+
+
+## TODO
+
+- fix docker install to the most recent version(https://github.com/linkedin/datahub/issues/2020#issuecomment-736850314)
+- add firacode font
+- install go
+- install elixir
