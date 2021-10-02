@@ -68,3 +68,4 @@ Place your customizations in the following files:
 - install dbeaver
 - install brave
 - install k8s
+- install fzs (https://github.com/junegunn/fzf)
