@@ -11,3 +11,7 @@ brew cask install spotify
 
 brew tap homebrew/cask-fonts
 brew cask install font-fira-code
+
+brew install fzf
+# To install useful key bindings and fuzzy completion:
+$(brew --prefix)/opt/fzf/install
