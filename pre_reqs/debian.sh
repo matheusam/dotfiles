@@ -47,6 +47,11 @@ install_brave() {
   sudo apt install brave-browser
 }
 
+install_fzf() {
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  ~/.fzf/install
+}
+
 install_tmux() {
   TMUX_VERSION="3.1b"
   TMUX_SOURCE_FILE="tmux-${TMUX_VERSION}.tar.gz"
@@ -116,6 +121,7 @@ install_docker
 install_docker_compose
 install_spotify
 install_brave
+install_fzf
 install_tmux > /dev/null 2>&1
 install_gnome_terminal_colors
 

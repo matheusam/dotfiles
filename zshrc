@@ -79,3 +79,7 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 eval "$(rbenv init -)"
+
+export PATH=$PATH:/usr/local/go/bin
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
