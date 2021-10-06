@@ -79,6 +79,11 @@ install_gnome_terminal_colors() {
   $COLORS_PATH/install.sh
 }
 
+install_heroku() {
+  curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+  heroku login -i
+}
+
 remove_manual_ruby_install() {
   sudo apt-get remove -y ruby
   sudo apt-get autoremove -y
@@ -124,6 +129,8 @@ install_brave
 install_fzf
 install_tmux > /dev/null 2>&1
 install_gnome_terminal_colors
+
+install_heroku
 
 remove_manual_ruby_install
 

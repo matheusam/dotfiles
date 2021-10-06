@@ -15,3 +15,6 @@ brew cask install font-fira-code
 brew install fzf
 # To install useful key bindings and fuzzy completion:
 $(brew --prefix)/opt/fzf/install
+
+brew tap heroku/brew && brew install heroku
+heroku login -i
