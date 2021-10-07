@@ -33,10 +33,13 @@ install_docker_compose() {
 }
 
 install_k8s() {
-  sudo curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-  sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
+  curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+  echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
   sudo apt-get update
-  apt-get install -y kubelet kubeadm kubectl
+  sudo apt-get install -y kubelet kubeadm kubectl
+
+  # gcloud container clusters list
+  # gcloud container clusters get-credentials CLUSTER --region=REGION
 }
 
 install_spotify() {
@@ -111,6 +114,18 @@ install_aws() {
   rm -f session-manager-plugin.deb
 }
 
+install_gcp() {
+  echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+  sudo apt-get install apt-transport-https ca-certificates gnupg
+  curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+  sudo apt-get update && sudo apt-get install google-cloud-sdk
+  sudo chown -R $USER:$USER ~/.config/gcloud
+  gcloud init
+
+  wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O ~/cloud_sql_proxy
+  chmod +x ~/cloud_sql_proxy
+}
+
 install_dbeaver() {
   curl -fsSLo ~/Downloads/dbeaver.deb "https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb"
   sudo dpkg -i ~/Downloads/dbeaver.deb
@@ -152,6 +167,7 @@ install_atom
 
 install_heroku
 install_aws
+install_gcp
 
 install_dbeaver
 
