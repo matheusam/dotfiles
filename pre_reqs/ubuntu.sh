@@ -78,6 +78,14 @@ install_gnome_terminal_colors() {
   $COLORS_PATH/install.sh
 }
 
+install_atom() {
+  curl -o ~/Downloads/atom.deb https://atom.io/download/deb
+  sudo dpkg -i ~/Downloads/atom.deb
+  sudo apt install -f
+  sudo dpkg -i ~/Downloads/atom.deb
+  rm -f ~/Downloads/atom.deb
+}
+
 install_heroku() {
   curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
   heroku login -i
@@ -109,6 +117,8 @@ install_brave
 install_fzf
 install_tmux > /dev/null 2>&1
 install_gnome_terminal_colors
+
+install_atom
 
 install_heroku
 
