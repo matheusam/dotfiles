@@ -54,18 +54,10 @@ Place your customizations in the following files:
 
 ## TODO
 
-- fix docker install to the most recent version(https://github.com/linkedin/datahub/issues/2020#issuecomment-736850314)
 - fix firacode font install
 - install go(from source)
 - install elixir(asdf) (install default latest) - install erlang also
 - change ruby install rbenv for asdf(install default 2.7.1)
-- install aws sdk
 - install gcp sdk
 - install cloudproxy
-- install heroku sdk
-- install atom
 - install atom packages(status-bar-blame, termination, firacode, go-plus(https://rominirani.com/setup-go-development-environment-with-atom-editor-a87a12366fcf)) (language-elixir, ide-elixir, atom-elixir-formatter, linter-elixir-credo)
-- install dbeaver
-- install brave
-- install k8s
-- install fzs (https://github.com/junegunn/fzf)
