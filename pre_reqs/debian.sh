@@ -99,6 +99,19 @@ install_heroku() {
   heroku login -i
 }
 
+install_aws() {
+  curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "~/awscliv2.zip"
+  unzip ~/awscliv2.zip
+  cd ~ && sudo ./aws/install && cd -
+  rm -f ~/awscliv2.zip
+
+  curl "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb" -o "session-manager-plugin.deb"
+  sudo dpkg -i session-manager-plugin.deb
+  sudo apt install -f
+  sudo dpkg -i session-manager-plugin.deb
+  rm -f session-manager-plugin.deb
+}
+
 remove_manual_ruby_install() {
   sudo apt-get remove -y ruby
   sudo apt-get autoremove -y
@@ -150,6 +163,7 @@ install_gnome_terminal_colors
 install_atom
 
 install_heroku
+install_aws
 
 remove_manual_ruby_install
 
