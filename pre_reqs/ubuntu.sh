@@ -32,6 +32,13 @@ install_docker_compose() {
   docker-compose -v
 }
 
+install_k8s() {
+  sudo curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+  sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
+  sudo apt-get update
+  apt-get install -y kubelet kubeadm kubectl
+}
+
 install_spotify() {
   curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
   echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
@@ -112,6 +119,8 @@ sudo apt-get upgrade && apt-get update
 
 install_docker
 install_docker_compose
+install_k8s
+
 install_spotify
 install_brave
 install_fzf
