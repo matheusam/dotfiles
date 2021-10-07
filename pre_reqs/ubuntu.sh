@@ -86,7 +86,7 @@ install_gnome_terminal_colors() {
 }
 
 install_atom() {
-  curl -o ~/Downloads/atom.deb https://atom.io/download/deb
+  curl -fsSLo ~/Downloads/atom.deb https://atom.io/download/deb
   sudo dpkg -i ~/Downloads/atom.deb
   sudo apt install -f
   sudo dpkg -i ~/Downloads/atom.deb
@@ -99,16 +99,24 @@ install_heroku() {
 }
 
 install_aws() {
-  curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "~/awscliv2.zip"
+  curl -fsSLo ~/awscliv2.zip "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip"
   unzip ~/awscliv2.zip
   cd ~ && sudo ./aws/install && cd -
   rm -f ~/awscliv2.zip
 
-  curl "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb" -o "session-manager-plugin.deb"
+  curl -fsSLo session-manager-plugin.deb "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb"
   sudo dpkg -i session-manager-plugin.deb
   sudo apt install -f
   sudo dpkg -i session-manager-plugin.deb
   rm -f session-manager-plugin.deb
+}
+
+install_dbeaver() {
+  curl -fsSLo ~/Downloads/dbeaver.deb "https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb"
+  sudo dpkg -i ~/Downloads/dbeaver.deb
+  sudo apt install -f
+  sudo dpkg -i ~/Downloads/dbeaver.deb
+  rm -f ~/Downloads/dbeaver.deb
 }
 
 remove_manual_ruby_install() {
@@ -144,6 +152,8 @@ install_atom
 
 install_heroku
 install_aws
+
+install_dbeaver
 
 remove_manual_ruby_install
 
