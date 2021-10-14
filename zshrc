@@ -72,14 +72,12 @@ source ~/.zsh/themes/peepcode.theme
 
 setopt interactivecomments
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-eval "$(rbenv init -)"
-
 export PATH=$PATH:/usr/local/go/bin
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+. $HOME/.asdf/asdf.sh
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit && compinit
