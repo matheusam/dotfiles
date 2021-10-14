@@ -50,14 +50,3 @@ Place your customizations in the following files:
 * .plugin.vim.local
 * .tmux.conf.local
 * .gitconfig.local
-
-
-## TODO
-
-- fix firacode font install
-- install go(from source)
-- install elixir(asdf) (install default latest) - install erlang also
-- change ruby install rbenv for asdf(install default 2.7.1)
-- install gcp sdk
-- install cloudproxy
-- install atom packages(status-bar-blame, termination, firacode, go-plus(https://rominirani.com/setup-go-development-environment-with-atom-editor-a87a12366fcf)) (language-elixir, ide-elixir, atom-elixir-formatter, linter-elixir-credo)

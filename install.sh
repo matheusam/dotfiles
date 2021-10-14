@@ -1,14 +1,13 @@
 #!/bin/sh
 
-rbenv_install() {
-  git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-  echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
-  echo 'eval "$(rbenv init -)"' >> ~/.bashrc
-  source ~/.bashrc
-  type rbenv
-  git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
-  rbenv install 2.7.1
-  rbenv global 2.7.1
+asdf_install() {
+  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.1
+}
+
+ruby_install() {
+  asdf plugin add ruby
+  asdf install ruby 2.7.1
+  asdf global ruby 2.7.1
 }
 
 git_install() {
@@ -44,7 +43,7 @@ then
 
   case "$(uname -s)" in
     Linux)
-      echo "  - rbenv"
+      echo "  - asdf"
       echo "  - vim (vim-gnome)"
       NODE_VERSION=12
 
@@ -55,7 +54,8 @@ then
 
       git_install
 
-      rbenv_install
+      asdf_install
+      ruby_install
 
       curl -sL https://deb.nodesource.com/setup_${NODE_VERSION}.x | sudo -E bash -
       curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
@@ -80,7 +80,8 @@ then
       echo "  - vim (macvim)"
       echo "  - atom (mac)"
 
-      rbenv_install
+      asdf_install
+      ruby_install
       ;;
     CYGWIN* | MSYS*)
       echo 'You are using a Windows machine which is not recommended to use with our' \
