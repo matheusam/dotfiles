@@ -169,6 +169,12 @@ install_fira_code_font() {
   fc-cache -f
 }
 
+install_go() {
+  sudo curl -fsSLo ~/Downloads/go "https://golang.org/dl/go1.17.2.linux-amd64.tar.gz"
+  sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go.tar.gz
+  sudo echo -n 'export PATH=$PATH:/usr/local/go/bin' >> ~/.zshrc
+}
+
 echo 'Starting debian install'
 
 sudo apt-get upgrade && apt-get update
@@ -195,5 +201,7 @@ remove_manual_ruby_install
 
 setup_wallpaper
 install_fira_code_font
+
+install_go
 
 echo 'Minimal requests installed! =]'
