@@ -149,6 +149,12 @@ install_fira_code_font() {
   sudo apt install fonts-firacode
 }
 
+install_erlang_and_elixir() {
+  apt-get -y install build-essential autoconf m4 libncurses5-dev libwxgtk3.0-gtk3-dev libgl1-mesa-dev libglu1-mesa-dev libpng-dev libssh-dev unixodbc-dev xsltproc fop libxml2-utils libncurses-dev openjdk-11-jdk
+  asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
+  asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+}
+
 echo 'Starting ubuntu install'
 
 sudo apt-get upgrade && apt-get update
@@ -175,5 +181,7 @@ remove_manual_ruby_install
 
 setup_wallpaper
 install_fira_code_font
+
+install_erlang_and_elixir
 
 echo 'Minimal requests installed! =]'
