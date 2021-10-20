@@ -169,6 +169,16 @@ install_fira_code_font() {
   fc-cache -f
 }
 
+install_jmeter() {
+  sudo apt-get purge openjdk-\*
+  sudo apt install openjdk-9-jre && sudo apt install openjdk-9-jdk
+  sudo apt-get install apache2 -y
+  sudo systemctl start apache2
+  sudo systemctl enable apache2
+  wget https://downloads.apache.org//jmeter/binaries/apache-jmeter-5.3.zip -O ~/apache-jmeter
+  unzip ~/apache-jmeter
+}
+
 echo 'Starting debian install'
 
 sudo apt-get upgrade && apt-get update
@@ -195,5 +205,7 @@ remove_manual_ruby_install
 
 setup_wallpaper
 install_fira_code_font
+
+install_jmeter
 
 echo 'Minimal requests installed! =]'
