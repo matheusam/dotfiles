@@ -152,9 +152,9 @@ install_fira_code_font() {
 install_jmeter() {
   sudo apt-get purge openjdk-\*
   sudo apt install openjdk-9-jre && sudo apt install openjdk-9-jdk
-  curl -fsSLo apache-jmeter-5.3.zip "https://downloads.apache.org//jmeter/binaries/apache-jmeter-5.3.zip"
-  unzip ~/apache-jmeter-5.3.zip
-  rm -f apache-jmeter-5.3.zip
+  curl -fsSLo ~/apache-jmeter/apache-jmeter-5.3.zip "https://downloads.apache.org//jmeter/binaries/apache-jmeter-5.3.zip"
+  unzip ~/apache-jmeter/apache-jmeter-5.3.zip
+  rm -f ~/apache-jmeter/apache-jmeter-5.3.zip
 }
 
 install_go() {
