@@ -149,6 +149,14 @@ install_fira_code_font() {
   sudo apt install fonts-firacode
 }
 
+install_jmeter() {
+  sudo apt-get purge openjdk-\*
+  sudo apt install openjdk-9-jre && sudo apt install openjdk-9-jdk
+  curl -fsSLo apache-jmeter-5.3.zip "https://downloads.apache.org//jmeter/binaries/apache-jmeter-5.3.zip"
+  unzip ~/apache-jmeter-5.3.zip
+  rm -f apache-jmeter-5.3.zip
+}
+
 install_go() {
   curl -fsSLo go1.17.2.linux-amd64.tar.gz "https://golang.org/dl/go1.17.2.linux-amd64.tar.gz"
   sudo rm -rf /usr/local/go1.17.2.linux-amd64.tar.gz && sudo tar -C /usr/local -xzf go1.17.2.linux-amd64.tar.gz
@@ -187,6 +195,8 @@ remove_manual_ruby_install
 
 setup_wallpaper
 install_fira_code_font
+
+install_jmeter
 
 install_go
 install_erlang_and_elixir
