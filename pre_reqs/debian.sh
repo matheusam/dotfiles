@@ -177,6 +177,18 @@ install_jmeter() {
   rm -f apache-jmeter-5.3.zip
 }
 
+install_go() {
+  curl -fsSLo go1.17.2.linux-amd64.tar.gz "https://golang.org/dl/go1.17.2.linux-amd64.tar.gz"
+  sudo rm -rf /usr/local/go1.17.2.linux-amd64.tar.gz && sudo tar -C /usr/local -xzf go1.17.2.linux-amd64.tar.gz
+  rm -f go1.17.2.linux-amd64.tar.gz
+  go version
+}
+
+install_erlang_and_elixir() {
+  asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
+  asdf plugin add elixir https://github.com/asdf-vm/asdf-elixir.git
+}
+
 echo 'Starting debian install'
 
 sudo apt-get upgrade && apt-get update
@@ -205,5 +217,8 @@ setup_wallpaper
 install_fira_code_font
 
 install_jmeter
+
+install_go
+install_erlang_and_elixir
 
 echo 'Minimal requests installed! =]'
