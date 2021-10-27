@@ -176,6 +176,11 @@ install_go() {
   go version
 }
 
+install_erlang_and_elixir() {
+  asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
+  asdf plugin add elixir https://github.com/asdf-vm/asdf-elixir.git
+}
+
 echo 'Starting debian install'
 
 sudo apt-get upgrade && apt-get update
@@ -204,5 +209,6 @@ setup_wallpaper
 install_fira_code_font
 
 install_go
+install_erlang_and_elixir
 
 echo 'Minimal requests installed! =]'
