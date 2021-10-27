@@ -152,7 +152,7 @@ install_fira_code_font() {
 install_go() {
   curl -fsSLo go1.17.2.linux-amd64.tar.gz "https://golang.org/dl/go1.17.2.linux-amd64.tar.gz"
   sudo rm -rf /usr/local/go1.17.2.linux-amd64.tar.gz && sudo tar -C /usr/local -xzf go1.17.2.linux-amd64.tar.gz
-  rm -f curl go1.17.2.linux-amd64.tar.gz
+  rm -f go1.17.2.linux-amd64.tar.gz
   go version
 }
 
