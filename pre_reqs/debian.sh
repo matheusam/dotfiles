@@ -170,9 +170,10 @@ install_fira_code_font() {
 }
 
 install_go() {
-  sudo curl -fsSLo ~/Downloads/go "https://golang.org/dl/go1.17.2.linux-amd64.tar.gz"
-  sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go.tar.gz
-  sudo echo -n 'export PATH=$PATH:/usr/local/go/bin' >> ~/.zshrc
+  curl -fsSLo go1.17.2.linux-amd64.tar.gz "https://golang.org/dl/go1.17.2.linux-amd64.tar.gz"
+  sudo rm -rf /usr/local/go1.17.2.linux-amd64.tar.gz && sudo tar -C /usr/local -xzf go1.17.2.linux-amd64.tar.gz
+  rm -f curl go1.17.2.linux-amd64.tar.gz
+  go version
 }
 
 echo 'Starting debian install'
