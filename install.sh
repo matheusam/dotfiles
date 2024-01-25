@@ -1,13 +1,19 @@
 #!/bin/sh
 
 asdf_install() {
-  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.1
+   sudo apt-get update
+   sudo apt-get install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev
+   sudo apt-get install libssl-dev
+
+    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
+    . "$HOME/.asdf/asdf.sh"
+    . "$HOME/.asdf/completions/asdf.bash"
 }
 
 ruby_install() {
   asdf plugin add ruby
-  asdf install ruby 2.7.1
-  asdf global ruby 2.7.1
+  asdf install ruby 3.2.3
+  asdf global ruby 3.2.3
 }
 
 git_install() {
@@ -58,8 +64,8 @@ then
       ruby_install
 
       curl -sL https://deb.nodesource.com/setup_${NODE_VERSION}.x | sudo -E bash -
-      curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-      echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+      curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/yarn-archive-keyring.gpg >/dev/null
+      echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 
       sudo apt-get install -y silversearcher-ag \
         git \
