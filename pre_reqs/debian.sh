@@ -90,7 +90,7 @@ install_gnome_terminal_colors() {
 }
 
 install_atom() {
-  curl -fsSLo ~/Downloads/atom.deb https://atom.io/download/deb
+  curl -fsSLo ~/Downloads/atom.deb https://github.com/atom/atom/releases/download/v1.60.0/atom-amd64.deb
   sudo dpkg -i ~/Downloads/atom.deb
   sudo apt install -f
   sudo dpkg -i ~/Downloads/atom.deb
