@@ -1,56 +1,91 @@
 #!/bin/sh
 
 zsh_syntax_highlighting_install() {
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh-syntax-highlighting
+  if [ -d "$HOME/.zsh-syntax-highlighting" ]; then
+    echo "zsh-syntax-highlighting already installed. Skipping..."
+  else
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh-syntax-highlighting
+  fi
 }
 
 asdf_install() {
-  sudo apt-get update
-  sudo apt-get install -y autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev
-  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
-  . "$HOME/.asdf/asdf.sh"
-  . "$HOME/.asdf/completions/asdf.bash"
+  if [ -d "$HOME/.asdf" ]; then
+    echo "asdf already installed. Skipping..."
+  else
+    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.15.0
+  fi
+
+  if [ -f "$HOME/.asdf/asdf.sh" ]; then
+    . "$HOME/.asdf/asdf.sh"
+  fi
 }
 
 ruby_install() {
-  asdf plugin add ruby
-  asdf install ruby 3.3.4
-  asdf global ruby 3.3.4
+  if asdf list ruby | grep -q "3.3.4"; then
+    echo "Ruby 3.3.4 already installed. Skipping..."
+  else
+    asdf plugin add ruby || true
+    asdf install ruby 3.3.4
+    asdf global ruby 3.3.4
+  fi
 }
 
 node_install() {
-  asdf plugin add nodejs
-  asdf install nodejs 18.19.1
-  asdf global nodejs 18.19.1
-  curl -o- -L https://yarnpkg.com/install.sh | bash -s
-  source ~/.zshrc && yarn -v
+  if asdf list nodejs | grep -q "18.19.1"; then
+    echo "Node.js 18.19.1 already installed. Skipping..."
+  else
+    asdf plugin add nodejs || true
+    asdf install nodejs 18.19.1
+    asdf global nodejs 18.19.1
+  fi
+
+  if command -v yarn >/dev/null 2>&1; then
+    echo "Yarn already installed. Skipping..."
+  else
+    curl -o- -L https://yarnpkg.com/install.sh | bash -s
+    source ~/.zshrc && yarn -v
+  fi
 }
 
 aws_install() {
-  echo $(printenv HOME) | xargs -I '{}' sed -i.bu 's,TO_BE_REPLACED,{},g' ~/.dotfiles/aws_choices.xml
-  curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
-  sudo installer -pkg AWSCLIV2.pkg -target /
-  rm AWSCLIV2.pkg
+  if command -v aws >/dev/null 2>&1; then
+    echo "AWS CLI already installed. Skipping..."
+  else
+    echo "$(printenv HOME)" | xargs -I '{}' sed -i.bu 's,TO_BE_REPLACED,{},g' ~/.dotfiles/aws_choices.xml
+    curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+    sudo installer -pkg AWSCLIV2.pkg -target /
+    rm AWSCLIV2.pkg
+  fi
 }
 
 setup_git_account() {
   git config --global core.editor nvim
-  read -p 'Git username: ' gituser
-  git config --global user.name "$gituser"
-  read -p 'Git email: ' gitmail
-  git config --global user.email "$gitmail"
+
+  if [ -z "$(git config --global user.name)" ]; then
+    read -p 'Git username: ' gituser
+    git config --global user.name "$gituser"
+  fi
+
+  if [ -z "$(git config --global user.email)" ]; then
+    read -p 'Git email: ' gitmail
+    git config --global user.email "$gitmail"
+  fi
 }
 
 git_install() {
-  sudo apt remove -y git
-  sudo apt install -y make libssl-dev libghc-zlib-dev libcurl4-gnutls-dev libexpat1-dev gettext unzip
-  cd /usr/src/
-  sudo wget https://github.com/git/git/archive/v2.29.0.tar.gz -O git.tar.gz
-  sudo tar -xf git.tar.gz
-  cd git-*
-  sudo make prefix=/usr/local all
-  sudo make prefix=/usr/local install
-  git --version
+  if command -v git >/dev/null 2>&1; then
+    echo "Git already installed. Skipping..."
+  else
+    sudo apt remove -y git
+    sudo apt install -y make libssl-dev libghc-zlib-dev libcurl4-gnutls-dev libexpat1-dev gettext unzip
+    cd /usr/src/
+    sudo wget https://github.com/git/git/archive/v2.29.0.tar.gz -O git.tar.gz
+    sudo tar -xf git.tar.gz
+    cd git-*
+    sudo make prefix=/usr/local all
+    sudo make prefix=/usr/local install
+    git --version
+  fi
 }
 
 install_packages_linux() {
@@ -66,7 +101,7 @@ install_dotfiles() {
     setup_git_account
     rake install
   else
-    echo "Dotfiles already installed."
+    echo "Dotfiles already installed. Skipping..."
   fi
 }
 
