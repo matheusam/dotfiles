@@ -1,159 +1,65 @@
 # Dotfiles
 
-## Source of inspiration
+## Source of Inspiration
 
-This project is a fork from
+This project is a fork from [CC Dotfiles](https://github.com/the-harry/dotfiles).
 
-[CC Dotfiles](https://github.com/the-harry/dotfiles)
+## Pre-Requisites
 
-## Pre-Reqs
+### Ubuntu / Debian
 
-#### Ubuntu / Debian
+* Install `curl`:
+  ```sh
+  sudo apt-get install -y curl
+  ```
 
-* curl:
+### Mac (Intel / M2 / M3 chips)
 
-`sudo apt-get install -y curl`
+* Install Homebrew:
+  ```sh
+  xcode-select --install || xcode-select -r
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  ```
+  For Intel Macs, Homebrew installs in `/usr/local`. For Apple Silicon (M2/M3), it installs in `/opt/homebrew`. Follow the instructions on [brew.sh](https://brew.sh/) if not installed.
 
-#### Mac
+## Installation
 
-* Homebrew:
+Run the following command:
 
-`xcode-select --install || xcode-select -r`
-
-`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
-
-## Install
-
-Run follow command:
-
-```
-sh -c "`curl -fSs https://raw.githubusercontent.com/the-harry/dotfiles/master/install.sh`"
-```
-
-Type your password to change your default shell to `zsh`
-
-## Docs
-
-[Vim Key Mapping](Vim.md)
-
-[Tmux Key Mapping](Tmux.md)
-
-#### It's easy to make your customizations
-
-Place your customizations in the following files:
-
-* .aliases.local
-* .secrets
-* .zshrc.local
-* .vimrc.local
-* .zshenv.local
-* .plugin.vim.local
-* .tmux.conf.local
-* .gitconfig.local
-
-
-
-# Dotfiles M2
-
-## Source of inspiration
-
-This project is a fork from [my old dotfile](https://github.com/the-harry/dotfiles).
-
-## Pre-Reqs
-
-#### Mac M2 chips
-
-* Homebrew:
-
-Follow the instructions on brew.sh if you don't have it installed yet.
-
-## Install
-
-Run follow command:
-
-```
-sh -c "`curl -fSs https://raw.githubusercontent.com/the-harry/dotfiles_m2/master/install.sh`"
+```sh
+sh -c "$(curl -fSs https://raw.githubusercontent.com/the-harry/dotfiles/master/install.sh)"
 ```
 
-Type your password to change your default shell to `zsh`
+Type your password to change your default shell to `zsh`.
 
-## After install
+## Post-Installation Steps (Mac Intel / M2 / M3)
 
-* Go into Sys Pref > Network > Advanced > Proxies > Automatic Proxy Configuration and copy and paste the full address here in `~/.dotfiles_m2/zshrc`:
+* Configure HTTP Proxy:
+  ```sh
+  export HTTP_PROXY=http://proxy.server.com:portnumber
+  ```
+  Edit `~/.zshrc` to permanently add this.
 
-`export HTTP_PROXY=http://proxy.server.com:portnumber`
+* Set up environment variables:
+  Edit `~/.dotfiles/zshrc` and add tokens for services like GitHub and 1Password, then reload:
+  ```sh
+  source ~/.zshrc
+  ```
 
-Also edit other variables that depends on tokens like GitHub, 1pass, etc... After that just source it again:
+## Documentation
 
-`source ~/.dotfiles_m2/zshrc`
+* [Vim Key Mapping](Vim.md)
+* [Tmux Key Mapping](Tmux.md)
 
-* Manually download tunnelBrick VPN.
+## Customization
 
-* Clone [smartaws](git clone git@github.com:smartpension/trekkie-toolkit.git) and [install it](https://github.com/smartpension/trekkie-toolkit/tree/main/aws#smart-aws)
+Place your custom configurations in the following files:
 
-## Docs
-
-[Vim Key Mapping](Vim.md)
-
-[Tmux Key Mapping](Tmux.md)
-
-#### It's easy to make your customizations
-
-Place your customizations in the following files:
-
-* .aliases.local
-* .secrets
-* .zshrc.local
-* .vimrc.local
-* .zshenv.local
-* .plugin.vim.local
-* .tmux.conf.local
-* .gitconfig.local
-
-
-
-
-# Dotfiles M3
-
-## Pre-Reqs
-
-#### Mac M3 chips
-
-* Homebrew:
-
-Follow the instructions on brew.sh if you don't have it installed yet.
-
-## Install
-
-Run follow command:
-
-```
-sh -c "`curl -fSs https://raw.githubusercontent.com/the-harry/dotfiles_m3/master/install.sh`"
-```
-
-Type your password to change your default shell to `zsh`
-
-## After install
-
-Edit other env vars that depends on tokens like GitHub, 1pass, etc... After that just source it again:
-
-`source ~/.dotfiles_m3/zshrc`
-
-## Docs
-
-[Vim Key Mapping](Vim.md)
-
-[Tmux Key Mapping](Tmux.md)
-
-#### It's easy to make your customizations
-
-Place your customizations in the following files:
-
-* .aliases.local
-* .secrets
-* .zshrc.local
-* .vimrc.local
-* .zshenv.local
-* .plugin.vim.local
-* .tmux.conf.local
-* .gitconfig.local
+* `.aliases.local`
+* `.secrets`
+* `.zshrc.local`
+* `.vimrc.local`
+* `.zshenv.local`
+* `.plugin.vim.local`
+* `.tmux.conf.local`
+* `.gitconfig.local`

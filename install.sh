@@ -20,8 +20,8 @@ ruby_install() {
 
 node_install() {
   asdf plugin add nodejs
-  asdf install nodejs 12.16.1
-  asdf global nodejs 12.16.1
+  asdf install nodejs 18.19.1
+  asdf global nodejs 18.19.1
   curl -o- -L https://yarnpkg.com/install.sh | bash -s
   source ~/.zshrc && yarn -v
 }
@@ -87,6 +87,7 @@ case "$(uname -s)" in
     asdf_install
     ruby_install
     node_install
+    aws_install
     install_dotfiles
     ;;
   *)

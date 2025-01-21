@@ -53,12 +53,12 @@ def install_files(files)
 end
 
 def install_prereqs
-  run_command %{ $HOME/.dotfiles/pre_reqs/mac_intel.sh } if macos_intel?
-  run_command %{ $HOME/.dotfiles_m2/pre_reqs/mac.sh } if macos_m2?
-  run_command %{ $HOME/.dotfiles_m3/pre_reqs/mac.sh } if macos_m3?
-  run_command %{ $HOME/.dotfiles/pre_reqs/kali.sh } if kali?
-  run_command %{ $HOME/.dotfiles/pre_reqs/debian.sh } if debian?
-  run_command %{ $HOME/.dotfiles/pre_reqs/ubuntu.sh } if ubuntu?
+  return run_command %{ $HOME/.dotfiles/pre_reqs/mac_intel.sh } if macos_intel?
+  return run_command %{ $HOME/.dotfiles_m2/pre_reqs/mac.sh } if macos_m2?
+  return run_command %{ $HOME/.dotfiles_m3/pre_reqs/mac.sh } if macos_m3?
+  return run_command %{ $HOME/.dotfiles/pre_reqs/kali.sh } if kali?
+  return run_command %{ $HOME/.dotfiles/pre_reqs/debian.sh } if debian?
+  return run_command %{ $HOME/.dotfiles/pre_reqs/ubuntu.sh } if ubuntu?
 end
 
 def install_fonts
