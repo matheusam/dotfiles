@@ -213,3 +213,5 @@ alias flash='docker-db-create && docker-pg-dump && docker-db-migrate && docker-e
 
 # Simplecov
 alias simplecov='xdg-open coverage/index.html'
+
+alias atom="atom-beta"

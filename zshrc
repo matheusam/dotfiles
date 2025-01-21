@@ -76,8 +76,95 @@ export PATH=$PATH:/usr/local/go/bin
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-. $HOME/.asdf/asdf.sh
+eval "$(fzf --zsh)"
+
+# . $HOME/.asdf/asdf.sh
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# export REQUESTS_CA_BUNDLE='/Library/Application Support/Netskope/STAgent/download/nscacert.pem'
+# export NODE_EXTRA_CA_CERTS='/Library/Application Support/Netskope/STAgent/data/nscacert.pem'
+# export SSL_CERT_FILE='/Library/Application Support/Netskope/STAgent/data/nscacert.pem'
+
+export BUNDLE_RUBYGEMS__PKG__GITHUB__COM='GITHUB'
+export BUNDLE_GITHUB__COM='GITHUB'
+
+export GITHUB_API_TOKEN='GITHUB'
+export BUNDLE_ENTERPRISE__CONTRIBSYS__COM="ONE_PASS"
+
+export AWS_REGION='REGION'
+export AWS_USER='USER'
+export MFA_ARN='ARN'
+export AWS_CA_BUNDLE='/etc/ssl/cert.pem'
+
+# export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+# export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+
+# export LDFLAGS='L/usr/local/opt/openssl/lib'
+# export CPPFLAGS='-I/usr/local/opt/openssl/include'
+# export PKG_CONFIG_PATH='/usr/local/opt/openssl/lib/pkgconfig'
+
+# export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# export HTTP_PROXY="NET CONFIG PROXY(FULL ADDRESS)"
+
+# RPROMPT='%{$fg[yellow]%}[%D{%T}] '$RPROMPT
+
+# zle_prefix='time '
+# zle-line-init() if [[ $CONTEXT = start ]] LBUFFER=$zle_prefix$LBUFFER
+# zle -N zle-line-init
+
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+export REQUESTS_CA_BUNDLE='/Library/Application Support/Netskope/STAgent/download/nscacert.pem'
+export NODE_EXTRA_CA_CERTS='/Library/Application Support/Netskope/STAgent/data/nscacert.pem'
+# export SSL_CERT_FILE='/Library/Application Support/Netskope/STAgent/data/nscacert.pem'
+
+export BUNDLE_RUBYGEMS__PKG__GITHUB__COM='GITHUB'
+export BUNDLE_GITHUB__COM='GITHUB'
+
+export GITHUB_API_TOKEN='GITHUB'
+export BUNDLE_ENTERPRISE__CONTRIBSYS__COM="ONE_PASS"
+
+export AWS_REGION='REGION'
+export AWS_USER='USER'
+export MFA_ARN='ARN'
+export AWS_CA_BUNDLE='/etc/ssl/cert.pem'
+
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+
+export LDFLAGS='L/usr/local/opt/openssl/lib'
+export CPPFLAGS='-I/usr/local/opt/openssl/include'
+export PKG_CONFIG_PATH='/usr/local/opt/openssl/lib/pkgconfig'
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+export HTTP_PROXY="NET CONFIG PROXY(FULL ADDRESS)"
+
+# RPROMPT='%{$fg[yellow]%}[%D{%T}] '$RPROMPT
+
+# zle_prefix='time '
+# zle-line-init() if [[ $CONTEXT = start ]] LBUFFER=$zle_prefix$LBUFFER
+# zle -N zle-line-init
+
+
+function nb() {
+    if [ -z "$1" ]; then
+        echo "Usage: nb <issue title>"
+        return 1
+    fi
+
+    branch_name=$(echo "$1" | tr '[:upper:]' '[:lower:]')
+    branch_name=$(echo "$branch_name" | tr ' ' '-')
+    branch_name=$(echo "$branch_name" | sed 's/[^a-z0-9-]//g')
+    branch_name=$(echo "$branch_name" | sed 's/^-*//;s/-*$//')
+
+    git checkout -b "mirage/ma/${branch_name}"
+}

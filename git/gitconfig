@@ -106,7 +106,7 @@
   default = upstream
 [core]
   autocrlf = false
-	editor = vim
+	editor = nvim
   excludesfile = ~/.gitignore
 [advice]
   # disable “how to stage/unstage/add” hints given by git status
@@ -123,5 +123,7 @@
 [include]
   path = ~/.gitconfig.local
 [user]
+	name = the-harry
 	email = matheusthebr@gmail.com
-	name = Harry
+[init]
+	defaultBranch = master
