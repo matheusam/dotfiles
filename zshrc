@@ -78,18 +78,18 @@ export PATH=$PATH:/usr/local/go/bin
 
 eval "$(fzf --zsh)"
 
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+. "$HOME/.asdf/asdf.sh"
 fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit && compinit
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+# export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+# export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
-export LDFLAGS='L/usr/local/opt/openssl/lib'
-export CPPFLAGS='-I/usr/local/opt/openssl/include'
-export PKG_CONFIG_PATH='/usr/local/opt/openssl/lib/pkgconfig'
+# export LDFLAGS='L/usr/local/opt/openssl/lib'
+# export CPPFLAGS='-I/usr/local/opt/openssl/include'
+# export PKG_CONFIG_PATH='/usr/local/opt/openssl/lib/pkgconfig'
 
 # RPROMPT='%{$fg[yellow]%}[%D{%T}] '$RPROMPT
 
