@@ -6,7 +6,7 @@ This project is a fork from [CC Dotfiles](https://github.com/the-harry/dotfiles)
 
 ## Pre-Requisites
 
-### Ubuntu / Debian
+### Ubuntu / Debian / Kali
 
 * Install `curl`:
   ```sh

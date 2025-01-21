@@ -99,6 +99,12 @@ def change_shell
 end
 
 def install_lazyvim
+  if linux?
+    run_command %{ sudo apt update && sudo apt install -y neovim }
+  else
+    run_command %{ brew update && brew install neovim }
+  end
+
   run_command %{ mv ~/.config/nvim{,.bak} }
   run_command %{ mv ~/.local/share/nvim{,.bak} }
   run_command %{ mv ~/.local/state/nvim{,.bak} }
