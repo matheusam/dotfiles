@@ -27,7 +27,7 @@ This project is a fork from [CC Dotfiles](https://github.com/the-harry/dotfiles)
 Run the following command:
 
 ```sh
-sh -c "$(curl -fSs https://raw.githubusercontent.com/the-harry/dotfiles/master/install.sh)"
+sh -c "$(curl -fSs https://raw.githubusercontent.com/the-harry/dotfiles/refs/heads/master/install.sh)"
 ```
 
 Type your password to change your default shell to `zsh`.
